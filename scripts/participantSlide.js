@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateSlidesToShow() {
         const screenWidth = window.innerWidth;
-        slidesToShow = screenWidth <= 392 ? 1 : 3;
+        slidesToShow = screenWidth <= 800 ? 1 : 3;
     }
 
     function updateSlidePosition() {
