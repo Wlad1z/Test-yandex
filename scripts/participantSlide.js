@@ -6,23 +6,29 @@ document.addEventListener("DOMContentLoaded", function() {
             image: 'static/participant.png'
         },
         {
+            name: 'Эммануил Ласкер',
+            title: 'Чемпион мира по шахматам',
+            image: 'static/participant.png'
+        },
+        {
             name: 'Александр Алехин',
             title: 'Чемпион мира по шахматам',
             image: 'static/participant.png'
         },
         {
-            name: 'Михаил Ботвинник',
+            name: 'Арон Нимцович',
             title: 'Чемпион мира по шахматам',
             image: 'static/participant.png'
         },
         {
-            name: 'Гарри Каспаров',
+            name: 'Рихард Рети',
             title: 'Чемпион мира по шахматам',
             image: 'static/participant.png'
-        },
+        }
+        ,
         {
-            name: 'Анатолий Карпов',
-            title: 'Чемпион мира по шахматам',
+            name: 'Остап Бендер',
+            title: 'Гроссмейстер',
             image: 'static/participant.png'
         }
     ];

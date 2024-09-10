@@ -1,4 +1,4 @@
-body{
+html, body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -879,7 +879,6 @@ footer{
     }
 
     .screen_3 .screen_3_slider {
-        overflow: hidden;
         display: flex;
         transition: transform 0.5s ease;
         width: 335px;
