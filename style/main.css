@@ -966,6 +966,14 @@ footer{
         flex-direction: column;
     }
 
+    .screen_3_slides .slide .article {
+        &.article-last {
+            .article-text {
+                width: 74%;
+            }
+        }
+    }
+
     .screen_3 .slider_btn {
         display: flex;
     }

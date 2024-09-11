@@ -50,5 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSlidePosition();
     updateButtons(currentSlideIndex);
 
-    window.addEventListener('resize', updateSlidePosition);
+    window.addEventListener('resize', function(){
+        const screenWidth = window.innerWidth;
+        currentSlideIndex = screenWidth >= 800 ? 0 : currentSlideIndex;
+        updateSlidePosition();
+        updateButtons(currentSlideIndex);
+    });
+
+
 });
