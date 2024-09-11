@@ -39,8 +39,6 @@ function initSlides() {
     updateSlidePosition();
     updateButtons();
     updateCount();
-
-    
     startAutoSlide();
 }
 
@@ -105,16 +103,10 @@ prevButton.addEventListener("click", function() {
     }
 });
 
-slidesContainer.addEventListener('mouseover', stopAutoSlide);
-
-slidesContainer.addEventListener('mouseout', startAutoSlide);
-
 initSlides();
 
 window.addEventListener('resize', function() {
-    updateSlidesToShow();
+    currentSlideIndex = 0;
+    stopAutoSlide();
     initSlides();
-    updateSlidePosition();
-    updateButtons();
-    updateCount();
 });
