@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 html, body{
     margin: 0;
     padding: 0;
@@ -25,7 +28,8 @@ button{
     transition: 300ms;
 }
 .btn{
-    border: none;
+    display: inline-block;
+    text-align: center;
     width: 263px;
     height: 72px;
     box-sizing: border-box;
@@ -35,12 +39,17 @@ button{
     line-height: 20.8px;
     border-radius: 66px;
     margin-right: 12px;
+    text-decoration: none;
+    padding-top: 13px;
+    transition: 300ms;
 }
 .btn-dark{
     background: #1F1F1F;
     color: #FFFFFF;
+    border: 2px solid #1F1F1F;
 
     &:hover{
+        border: 2px solid #FBCE51;
         background: #FBCE51;
         color: #1F1F1F;
     }
