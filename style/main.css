@@ -697,13 +697,13 @@ footer{
         font-weight: 400;
         line-height: 39.6px;
         width: 335px;
-        margin: 18px 1px 24px 20px;
+        margin: 18px auto 24px auto;
     }
 
     header .header-info {
         width: 335px;
         text-align: left;
-        margin: 0 18px;
+        margin: 0 auto;
 
         br{
             display: none;
@@ -713,6 +713,8 @@ footer{
     header .div-btn {
         margin: 30px 20px;
         text-align: center;
+        align-items: center;
+
 
         .btn{
             width: 335px;
@@ -1040,4 +1042,25 @@ footer{
         
         height: 217px;
     }
+}
+
+@media only screen and (max-width: 420px),
+       only screen and (max-device-width: 420px){
+    header h1 {
+        margin: 18px 1px 24px 20px;
+    }
+
+    header .header-info {
+        margin: 0 18px;
+    }
+
+    header .div-btn {
+        margin: 30px 20px;
+        text-align: center;
+
+        .btn{
+            margin-right: 0;
+        }
+    }
+
 }
