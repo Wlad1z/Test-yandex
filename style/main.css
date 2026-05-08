@@ -653,6 +653,13 @@ footer {
     }
 }
 
+@media only screen and (max-width: 1260px),
+       only screen and (max-device-width: 1260px){
+    .screen_4 .screen_4_slider .slides .participant img {
+        height: 200px;
+    }
+}
+
 @media only screen and (max-width: 1139px),
        only screen and (max-device-width: 1139px) {
     header {
@@ -683,9 +690,7 @@ footer {
         margin: 0 1%;
     }
 
-    .screen_4 .screen_4_slider .slides .participant img {
-        height: 200px;
-    }
+    
 
     footer {
         padding: 40px 5.3% 0 5.3%;
