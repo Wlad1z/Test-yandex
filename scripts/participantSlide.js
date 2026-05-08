@@ -7,7 +7,7 @@ const slidesData = [
     { name: 'Остап Бендер', title: 'Гроссмейстер', image: 'static/participant.png' }
 ];
 
-const slidesContainer = document.querySelector(".screen_4 .screen_4_slider .slide");
+const slidesContainer = document.querySelector(".screen_4 .screen_4_slider .slides");
 const prevButton = document.querySelector(".screen_4 .prev-btn");
 const nextButton = document.querySelector(".screen_4 .next-btn");
 const currentSlideElem = document.getElementById('current-slide');
@@ -51,7 +51,7 @@ function updateSlidePosition() {
     const firstSlide = slidesContainer.querySelector('.participant');
     const slideWidth = firstSlide.getBoundingClientRect().width; 
     const slideMarginRight = parseFloat(window.getComputedStyle(firstSlide).marginLeft);
-    const totalSlideWidth = slideWidth + slideMarginRight; 
+    const totalSlideWidth = slideWidth + slideMarginRight*2 + 20; 
 
     slidesContainer.style.transform = `translateX(-${currentSlideIndex * totalSlideWidth}px)`;
 }

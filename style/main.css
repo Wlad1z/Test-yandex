@@ -69,7 +69,8 @@ header{
     height: 700px;
     background: url(../static/header_back.jpg) center no-repeat;
     background-size: cover; 
-    padding: 0 18%;
+    padding: 0 18.1%;
+    background-position: 0px;
 }
 header .logo{
     padding: 26px 3px;
@@ -170,6 +171,7 @@ main .screen_1 div{
     font-weight: 400;
     line-height: 48.6px;
     text-align: left;
+    margin-right: 20px;
     
     strong{
         font-weight: 600;
@@ -285,19 +287,19 @@ main .screen_3 .screen_3_header_text{
     position: absolute;
     top: 233px;
     left: 328px;
-
+    width: 300px;
 }
 
 .screen_3 .screen_3_slides {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 133px 133px 133px; 
-    gap: 0px 0px; 
-    grid-template-areas: 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    grid-template-areas:
         "slide_1 slide_1 slide_2"
         "slide_3 slide_3 slide_2"
         "slide_4 slide_5 slide_5";
-    margin: 0 -14px 0 28px;
+    margin: 0 24px 0 28px;
 
 }
 
@@ -306,11 +308,8 @@ main .screen_3 .screen_3_header_text{
     font-size: 20px;
     font-weight: 500;
     line-height: 24px;
-    height: 112px;
-
-    &.slide_4, &.slide_5{
-        height: 136px;
-    }
+    height: auto;
+    width: 100%;
 }
 
 .screen_3_slides .slide .article::before{
@@ -331,14 +330,16 @@ main .screen_3 .screen_3_header_text{
 
 .screen_3_slides .slide .article{
     height: 100%;
-    width: 48.7%;
+    width: 50%;
     display: flex;
     align-items: center;
     background: url(../static/article_back.png) center no-repeat;
+    background-size: cover;
     position: relative;
+    
 
     &.article-last{
-        width: 98%;
+        width: 100%;
 
         .article-text{
             width: 446px;
@@ -348,7 +349,6 @@ main .screen_3 .screen_3_header_text{
 
 .screen_3 .screen_3_slides .slide_1 {
     grid-area: slide_1;
-    margin-right: 20px;
 
     & .article:nth-child(1)::before{
         content: '1';
@@ -360,10 +360,10 @@ main .screen_3 .screen_3_header_text{
 }
 .screen_3 .screen_3_slides .slide_2 {
     grid-area: slide_2;
-    height: 244px;
+    height: 100%;
 
     .article{
-        width: 96%;
+        width: 100%;
     }
 
     & .article::before{
@@ -372,7 +372,6 @@ main .screen_3 .screen_3_header_text{
 }
 .screen_3 .screen_3_slides .slide_3 {
     grid-area: slide_3;
-    margin-right: 20px;
 
     & .article:nth-child(1)::before{
         content: '4';
@@ -386,7 +385,7 @@ main .screen_3 .screen_3_header_text{
     grid-area: slide_4;
 
     .article{
-        width: 95%;
+        width: 100%;
     }
 
     & .article::before{
@@ -405,14 +404,14 @@ main .screen_3 .screen_3_header_text{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px
 }
 
 
 
 .screen_3_slides .slide .article .article-text{
-    width: 302px;
     height: 100%;
-    margin: 40px 0px 0 71px;
+    margin: 40px 20px 0 71px;
 }
 
 .screen_3 .slider_btn{
@@ -422,7 +421,7 @@ main .screen_3 .screen_3_header_text{
 .screen_3 .screen_3_img{
     position: absolute;
     bottom: -8px;
-    right: -60px;
+    right: -12%;
 }
 
 .screen_4 {
@@ -430,7 +429,7 @@ main .screen_3 .screen_3_header_text{
 }
 
 .screen_4 .screen_4_header{
-    margin: 203px 0 0 27px;
+    margin: 201px 0 0 27px;
     display: flex;
     justify-content: space-between;
 }
@@ -446,10 +445,12 @@ main .screen_3 .screen_3_header_text{
     color: #848484;
     position: absolute;
     top: 8px;
-    right: 4px;
+    right: 24px;
 
     div{
-        margin: 0 20px;
+        margin: 0 14px;
+        display: flex;
+        gap: 4px;
     }
 
     span:nth-child(1){
@@ -502,32 +503,35 @@ main .screen_3 .screen_3_header_text{
 }
 
 .screen_4 .screen_4_slider {
-    overflow: hidden; 
-    width: 100%;
+    overflow: hidden;
+    width: 1222px;
     position: relative;
+    padding: 0px 26px;
 }
 
 
-.screen_4 .screen_4_slider .slide {
+.screen_4 .screen_4_slider .slides {
     display: flex;
     transition: transform 0.5s ease;
     width: 100%;
+    margin-top: 58px;
+    gap: 20px;
 }
 
-.screen_4 .screen_4_slider .slide .participant{
+.screen_4 .screen_4_slider .slides .participant{
     text-align: center;
-    margin: 58px 0 0 78px;
+    margin: 0 37px;
     font-family: 'Golos-Text';
 }
 
-.screen_4 .screen_4_slider .slide .participant .participant_name{
+.screen_4 .screen_4_slider .slides .participant .participant_name{
     font-size: 24px;
     font-weight: 600;
     line-height: 28.8px;
     color: #313131;
 
     div:nth-child(1){
-        margin: 26px 0 0 -2px;
+        margin: 26px 0 0 4px;
     }
 
     div:nth-child(2){
@@ -535,11 +539,11 @@ main .screen_3 .screen_3_header_text{
         font-weight: 400;
         line-height: 24px;
         color: #848484;
-        margin: 6px 0 0 -2px;
+        margin: 6px 0 0 4px;
     }
 }
 
-.screen_4 .screen_4_slider .slide .participant button{
+.screen_4 .screen_4_slider .slides .participant button{
     border: 1px solid #3057A2;
     border-radius: 35px;
     background: white;
@@ -550,7 +554,7 @@ main .screen_3 .screen_3_header_text{
     height: 35px;
     width: 113px;
     font-family: 'Golos-text';
-    margin: 20px 0;
+    margin: 20px 0 0 6px;
 
     &:hover{
         background: #3057A2;
@@ -559,14 +563,12 @@ main .screen_3 .screen_3_header_text{
 }
 
 .running-line-footer{
-    margin-top: 118px;
+    margin-top: 138px;
 }
 
 
 footer{
     height: 150px;
-    display: flex;
-    align-items: center;
     font-family: 'Golos-text';
     font-size: 16px;
     font-weight: 400;
@@ -574,6 +576,13 @@ footer{
     background: #E9DED4;
     color: #7B7672;
     padding: 0 18%;
+}
+
+@media only screen and (max-width: 1700px),
+       only screen and (max-device-width: 1700px){
+    .screen_3 .screen_3_img{
+        right: -20%;
+    }
 }
 
 @media only screen and (max-width: 1600px),
@@ -585,6 +594,10 @@ footer{
     main {
         padding: 0px 9.5% 0 9%;
     }
+
+    .screen_3 .screen_3_img{
+        right: -12%;
+    }
     
     footer{
         padding: 0 10.8%;
@@ -595,15 +608,28 @@ footer{
        only screen and (max-device-width: 1366px){
     header{
         padding: 0px 5%;
+        background-position: center;
     }
 
     main {
         padding: 0px 3.5% 0 3.2%;
     }
+
+    .screen_3 .screen_3_img{
+        right: -3%;
+    }
     
     footer{
-        padding: 0 5.3%;
+        padding: 42px 5.3% 0 5.3%;
     }
+}
+
+@media only screen and (max-width: 1360px),
+       only screen and (max-device-width: 1360px){
+    .screen_3 .screen_3_img{
+        right: -6%;
+        bottom: -18%
+    }    
 }
 
 @media only screen and (max-width: 1139px),
@@ -625,27 +651,19 @@ footer{
     }
 
     .screen_3 .screen_3_slider{
-        margin: 0 0px 0 28px;
+        margin: 0;
     }
 
-    .screen_3 .screen_3_slider .slide{
-        font-size: 16px;
-    }
-
-    .screen_3 .screen_3_img {
-        position: absolute;
-        bottom: 20px;
-        right: 1px;
-        overflow: hidden;
-        width: 250px;
-    }
-
-    .screen_4 .screen_4_slider .slide .participant img{
+    .screen_4 .screen_4_slider .slides .participant img{
         height: 200px;
+    }
+
+    .screen_3 .screen_3_img{
+        bottom: -16%
     }
     
     footer{
-        padding: 0 5.3%;
+        padding: 40px 5.3% 0 5.3%;
     }
 }
 
@@ -674,6 +692,11 @@ footer{
         font-size: 16px;
     }
 
+    .screen_3 .screen_3_slides,
+    .screen_3_slides .slide_1, .slide_3{
+        gap: 8px;
+    }
+
 }
 @media only screen and (max-width: 800px),
        only screen and (max-device-width: 800px){
@@ -682,6 +705,7 @@ footer{
         background: url(../static/mobile_back.jpg) center no-repeat;
         background-size: cover;
         padding: 0;
+                background-position: 0 0;
     }
 
     header .logo {
@@ -753,6 +777,7 @@ footer{
 
         .screen_1_text {
             padding-left: 18px;
+            margin-right: 10px;
         }
     }
 
@@ -776,7 +801,7 @@ footer{
 
     main .screen_1 .screen_1_img{
         text-align: center;
-        margin-top: 12px;
+        margin: 12px;
 
         img{
             height: 212.56px;
@@ -791,7 +816,7 @@ footer{
         text-align: center;
         
         img{
-            height: 402px;
+            height: 430px;
         }
     }
 
@@ -799,7 +824,7 @@ footer{
         font-size: 28px;
         font-weight: 400;
         line-height: 37.8px;
-        padding: 34px 0 0 20px;
+        padding: 6px 14px 0 20px;
 
         br{
             display: none;
@@ -870,12 +895,27 @@ footer{
 
     }
 
+    .screen_3 .slider_btn{
+        width: 178px;
+        margin: 20px auto;
+    }
+
+    .screen_3 .slider_btn {
+        div{
+            gap: 6px
+        }
+    }
+
     .screen_3 .screen_3_img {
         width: auto;
-        top: 273px;
-        right: -24px;
+        height: 200px;
+        top: 296px;
+        right: -20px;
         scale: 0.87;
+        transform: rotate(-4deg);
     }
+
+    
 
     
 
@@ -904,6 +944,7 @@ footer{
         width: 100%;
         flex-direction: row;
         margin: 0;
+        gap: 20px;
     }
 
     .screen_3 .screen_3_slider .slide {
@@ -913,7 +954,6 @@ footer{
         width: 335px;
         padding: 61px 0 0 1px;
         box-sizing: border-box;
-        margin-right: 20px;
     }
 
     .screen_3 .screen_3_slider .slide {
@@ -1000,7 +1040,6 @@ footer{
         content: "";
         display: block;
         border-radius: 50%;
-        margin: 0 5px;
         height: 10px;
         width: 10px;
         background: #D9D9D9;
@@ -1026,17 +1065,40 @@ footer{
 
     }
 
-    .screen_4 .screen_4_slider .slide .participant {
-        margin: 39px 0 0 47px;
+    .screen_4 .screen_4_slider .slides{
+        margin-top: 40px;
     }
 
-    .screen_4 .screen_4_slider .slide .participant img{
+    .screen_4 .screen_4_slider .slides .participant {
+        width: calc(100vw - 52px);
+        margin: 0;
+    }
+
+    .screen_4 .screen_4_slider .slides .participant .participant_name {
+        div:nth-child(1) {
+            margin: 24px 0 0 -2px;
+        }
+    }
+
+    .screen_4 .screen_4_slider .slides .participant .participant_name {
+        div:nth-child(2) {
+            margin: 10px 0 0 0px;
+        }
+    }
+
+    
+
+    .screen_4 .screen_4_slider .slides .participant button {
+        margin: 18px 0 0 0px;
+    }
+
+    .screen_4 .screen_4_slider .slides .participant img{
         height: 244px;
     }
 
     .screen_4 .slider_btn{
-        margin: 21px 34% 100px 33%;
-
+        margin: 42px 33% 100px 33%;
+        gap: 10px;
         div{
             margin: 0;
         }
@@ -1071,4 +1133,36 @@ footer{
         }
     }
 
+}
+
+@media only screen and (max-width: 320px),
+       only screen and (max-device-width: 320px){
+    header h1, header .header-info, header .div-btn{
+        width: auto;
+    }
+
+    header .div-btn .btn{
+        width: 100%;
+        padding: 10px;
+        height: auto;
+    }
+    
+
+    header h1, main .screen_1 .screen_1_text{
+        margin: 20px;
+    }
+
+    main .screen_1 .screen_1_text{
+        padding: 0;
+    }
+
+    main .screen_1 div, main .screen_2 .screen_2_text_header, main .screen_3 .screen_3_header, .screen_4 .screen_4_header{
+        font-size: 24px;
+    }
+
+    .screen_3 .screen_3_img{
+        top: 242px;
+        right: -68px;
+    }
+    
 }

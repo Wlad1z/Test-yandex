@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     const slidesContainer = document.querySelector(".screen_3_slides");
     const slides = slidesContainer.querySelectorAll('.slide');
-    const prevButton = document.querySelector(".prev-btn");
-    const nextButton = document.querySelector(".next-btn");
+    const prevButton = document.querySelector(".screen_3 .prev-btn");
+    const nextButton = document.querySelector(".screen_3 .next-btn");
     const radios = document.querySelectorAll('#slider_dotted input[type="radio"]');
     let currentSlideIndex = 0;
 
     function updateSlidePosition() {
-        const slideWidth = 355;
-        slidesContainer.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        slidesContainer.style.transform = `translateX(-${currentSlideIndex * (slideWidth + 20)}px)`;
     }
 
     function updateButtons(x) {
