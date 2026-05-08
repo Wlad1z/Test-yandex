@@ -1,61 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const slidesContainer = document.querySelector(".screen_3_slides");
-    const slides = slidesContainer.querySelectorAll('.slide');
-    const prevButton = document.querySelector(".screen_3 .prev-btn");
-    const nextButton = document.querySelector(".screen_3 .next-btn");
+document.addEventListener('DOMContentLoaded', () => {
     const radios = document.querySelectorAll('#slider_dotted input[type="radio"]');
-    let currentSlideIndex = 0;
 
-    function updateSlidePosition() {
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        slidesContainer.style.transform = `translateX(-${currentSlideIndex * (slideWidth + 20)}px)`;
-    }
+    const slider = new Slider({
+        track: document.querySelector('.screen_3_slides'),
+        prevButton: document.querySelector('.screen_3 .prev-btn'),
+        nextButton: document.querySelector('.screen_3 .next-btn'),
+        slidesToShow: () => 1,
+        getStep: (track) => track.children[0].getBoundingClientRect().width + 20,
+        resetOnResize: false,
+        onChange: (index) => {
+            if (radios[index]) radios[index].checked = true;
+        },
+    });
 
-    function updateButtons(x) {
-        prevButton.disabled = x === 0;
-        prevButton.classList.toggle('disabled', prevButton.disabled);
+    radios.forEach((radio, i) => {
+        radio.addEventListener('click', () => slider.goTo(i));
+    });
 
-        nextButton.disabled = x === 4;
-        nextButton.classList.toggle('disabled', nextButton.disabled);
-
-        radios[x].checked = true;
-    }
-
-    prevButton.addEventListener("click", function() {
-        if (currentSlideIndex > 0) {
-            currentSlideIndex--;
-            updateSlidePosition();
-            updateButtons(currentSlideIndex);
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 800) {
+            slider.goTo(0);
+        } else {
+            slider.refresh();
         }
     });
-
-    nextButton.addEventListener("click", function() {
-        if (currentSlideIndex < slides.length - 1) {
-            currentSlideIndex++;
-            updateSlidePosition();
-            updateButtons(currentSlideIndex);
-        }
-    });
-
-    radios.forEach((radio, index) => {
-        radio.addEventListener('click', function() {
-            currentSlideIndex = index;
-            updateSlidePosition();
-            updateButtons(currentSlideIndex);
-        });
-    });
-
-    
-
-    updateSlidePosition();
-    updateButtons(currentSlideIndex);
-
-    window.addEventListener('resize', function(){
-        const screenWidth = window.innerWidth;
-        currentSlideIndex = screenWidth >= 800 ? 0 : currentSlideIndex;
-        updateSlidePosition();
-        updateButtons(currentSlideIndex);
-    });
-
-
 });
